@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="心愿智库学习平台 - 专业的土木工程知识付费平台，提供施工技术、行业规范、专业问答等服务。">
+    <meta name="keywords" content="土木工程,施工技术,工程问答,AI顾问,知识付费">
+    <meta name="author" content="心愿 职业工程师">
+    
+    <title>心愿智库学习平台 | 土木工程专业问答与知识服务</title>
+    
+    <!-- 内嵌CSS样式 -->
+    <style>
+        /* 基础样式 */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e67e22;
+            --success-color: #27ae60;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: #f5f7fa;
+        }
+        
+        /* 头部导航 */
+        .header {
+            background: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .logo-icon {
+            font-size: 2rem;
+            margin-right: 10px;
+        }
+        
+        /* 主菜单 */
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+        
+        /* 用户操作 */
+        .user-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .btn-login, .btn-subscribe {
+            padding: 10px 24px;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .btn-login {
+            background: white;
+            color: var(--secondary-color);
+            border: 2px solid var(--secondary-color);
+        }
+        
+        .btn-subscribe {
+            background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+            color: white;
+        }
+        
+        .btn-login:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+        
+        .btn-subscribe:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(52, 152, 219, 0.3);
+        }
+        
+        /* 英雄区域 */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        /* 特色区域 */
+        .features {
+            padding: 60px 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 50px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        /* 订阅区域 */
+        .pricing {
+            padding: 60px 0;
+            background: #f9f9f9;
+        }
+        
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            width: 320px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            position: relative;
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid var(--secondary-color);
+            transform: scale(1.05);
+        }
+        
+        .plan-name {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .plan-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin: 20px 0;
+        }
+        
+        .plan-period {
+            font-size: 1rem;
+            color: #777;
+        }
+        
+        .plan-features {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .plan-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        /* 页脚 */
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-title {
+            color: var(--light-color);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* 响应式 */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .nav-list {
+                gap: 15px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-list {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .user-actions {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
+            }
+        }
+    </style>
+    
+    <!-- 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- 网站图标 -->
+    <link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/npm/emoji-js@latest/lib/emoji.min.js">
+    
+    <!-- 结构化数据 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "心愿智库学习平台",
+        "url": "https://xinyuanzhiku.com",
+        "description": "专业的土木工程知识付费平台，提供施工技术、行业规范、专业问答等服务。",
+        "author": {
+            "@type": "Person",
+            "name": "心愿",
+            "jobTitle": "土木工程师"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header class="header">
+        <div class="container header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <span class="logo-icon">🏗️</span>
+                <span class="logo-text">心愿智库学习</span>
+            </div>
+            
+            <!-- 主菜单 -->
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="/" class="nav-link">首页</a></li>
+                    <li><a href="#features" class="nav-link">专业专栏</a></li>
+                    <li><a href="#pricing" class="nav-link">平台特色</a></li>
+                    <li><a href="#about" class="nav-link">关于我们</a></li>
+                    <li><a href="#contact" class="nav-link">联系我们</a></li>
+                </ul>
+            </nav>
+            
+            <!-- 用户操作 -->
+            <div class="user-actions">
+                <button class="btn-login" id="loginBtn">登录 / 注册</button>
+                <button class="btn-subscribe" id="subscribeBtn">立即订阅</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">土木工程专业知识平台</h1>
+            <p class="hero-subtitle">
+                5年现场经验工程师亲自解答，覆盖建筑、结构、地基、施工技术等全领域专业知识。
+                每日更新实践案例，提供从理论到实操的完整解决方案。
+            </p>
+            <div class="hero-buttons">
+                <button class="btn-subscribe" style="padding: 15px 40px; font-size: 1.1rem;">立即体验免费内容</button>
+                <button class="btn-login" style="padding: 15px 40px; font-size: 1.1rem;">查看订阅方案</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 平台特色 -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">平台核心特色</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏗️</div>
+                    <h3 class="feature-title">专业权威</h3>
+                    <p>5年一线施工经验工程师团队，所有解答均基于实际工程案例和行业规范。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">即时解答</h3>
+                    <p>24小时内专业答复，支持图文、音频、视频多种形式，解决施工现场实际问题。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3 class="feature-title">内容体系</h3>
+                    <p>系统化知识体系，从基础理论到高级技术，持续更新最新施工工艺和行业标准。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 订阅方案 -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">订阅方案</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3 class="plan-name">月度订阅</h3>
+                    <div class="plan-price">¥29 <span class="plan-period">/月</span></div>
+                    <ul class="plan-features">
+                        <li>✅ 无限问答</li>
+                        <li>✅ 标准回复时间</li>
+                        <li>✅ 每月专业文章</li>
+                        <li>✅ 社区讨论权限</li>
+                        <li>❌ 专属定制服务</li>
+                        <li>❌ 工程计算工具</li>
+                    </ul>
+                    <button class="btn-subscribe">选择此方案</button>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div style="position: absolute; top: 10px; right: 10px; background: var(--accent-color); color: white; padding: 5px 15px; border-radius: 15px; font-size: 0.8rem;">最受欢迎</div>
+                    <h3 class="plan-name">年度订阅</h3>
+                    <div class="plan-price">¥99 <span class="plan-period">/年</span></div>
+                    <div style="color: var(--success-color); font-weight: bold; margin: 10px 0;">节省 ¥249</div>
+                    <ul class="plan-features">
+                        <li>✅ 无限问答</li>
+                        <li>✅ 优先回复</li>
+                        <li>✅ 每月专业文章</li>
+                        <li>✅ 高级社区特性</li>
+                        <li>✅ 专属定制服务</li>
+                        <li>✅ 工程计算工具</li>
+                    </ul>
+                    <button class="btn-subscribe">选择此方案</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3 class="footer-title">关于我们</h3>
+                    <p>心愿智库学习平台致力于为土木工程从业者提供专业、实用的技术支持和服务，推动行业技术交流与进步。</p>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">联系方式</h3>
+                    <p>邮箱：contact@xinyuanzhiku.com</p>
+                    <p>电话：138-xxxx-xxxx</p>
+                    <p>微信：xinyuan_engineer</p>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">友情链接</h3>
+                    <p><a href="#" style="color: white;">扣子AI智能体</a></p>
+                    <p><a href="#" style="color: white;">爱发电专栏</a></p>
+                    <p><a href="#" style="color: white;">施工技术论坛</a></p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2026 心愿智库学习平台 | 保留所有权利 | 豫ICP备12345678号</p>
+                <p style="margin-top: 10px; font-size: 0.8rem;">技术由Claw AI技术支持</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 登录按钮点击
+        document.getElementById('loginBtn').addEventListener('click', function() {
+            alert('即将进入登录界面...\n用户名：test\n密码：test123');
+        });
+        
+        // 订阅按钮点击
+        document.getElementById('subscribeBtn').addEventListener('click', function() {
+            alert('正在选择订阅方案...\n推荐选择年度订阅，每年节省249元！');
+        });
+        
+        // 处理订阅卡片的点击
+        document.querySelectorAll('.pricing-card .btn-subscribe').forEach(button => {
+            button.addEventListener('click', function() {
+                const card = this.closest('.pricing-card');
+                const planName = card.querySelector('.plan-name').textContent;
+                const price = card.querySelector('.plan-price').textContent;
+                
+                alert(`已选择 ${planName}\n价格：${price}\n\n请准备好微信或支付宝扫码支付。`);
+            });
+        });
+        
+        // 简单的响应式检查
+        console.log('心愿智库学习平台已加载');
+        console.log('屏幕宽度：' + window.innerWidth + 'px');
+        
+        // 模拟用户数据
+        localStorage.setItem('xinyuan_platform_last_visit', new Date().toISOString());
+    </script>
+</body>
+</html>
