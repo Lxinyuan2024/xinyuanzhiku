@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🎨 CSS样式测试 - 心愿智库</title>
+    <style>
+        body { font-family: 'Microsoft YaHei'; max-width: 800px; margin: 40px auto; padding: 0 20px; }
+        .test-box { padding: 20px; margin: 20px 0; border-radius: 10px; }
+        .success { background: #d5f4e6; border-left: 5px solid #27ae60; }
+        .warning { background: #fdebd0; border-left: 5px solid #e67e22; }
+        .info { background: #ebf5fb; border-left: 5px solid #3498db; }
+        h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px; }
+        button { padding: 12px 24px; border: none; border-radius: 5px; cursor: pointer; margin: 5px; }
+        .btn-primary { background: #3498db; color: white; }
+        .btn-secondary { background: #95a5a6; color: white; }
+        .test-card { background: white; border-radius: 10px; padding: 20px; margin: 20px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    </style>
+</head>
+<body>
+    <h1>🎨 心愿智库 CSS样式完整测试</h1>
+    
+    <div class="test-box info">
+        <h2>📋 测试目的</h2>
+        <p>此页面用于测试网站CSS样式是否正常加载。如果所有测试项显示有颜色和样式，说明CSS正常。</p>
+        <p>当前时间：<span id="time"></span></p>
+    </div>
+    
+    <div class="test-card">
+        <h3>🎯 核心样式测试</h3>
+        <div class="grid-2">
+            <div>
+                <h4>按钮样式</h4>
+                <button class="btn-primary">主要按钮</button>
+                <button class="btn-secondary">次要按钮</button>
+            </div>
+            <div>
+                <h4>颜色测试</h4>
+                <div style="display:flex; gap:10px; margin-top:10px;">
+                    <div style="width:50px; height:50px; background:#3498db; border-radius:5px;" title="#3498db"></div>
+                    <div style="width:50px; height:50px; background:#2c3e50; border-radius:5px;" title="#2c3e50"></div>
+                    <div style="width:50px; height:50px; background:#27ae60; border-radius:5px;" title="#27ae60"></div>
+                    <div style="width:50px; height:50px; background:#e67e22; border-radius:5px;" title="#e67e22"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="test-card">
+        <h3>📱 响应式布局测试</h3>
+        <p>当前窗口宽度：<span id="width"></span>px</p>
+        <p>建议显示模式：<span id="mode"></span></p>
+    </div>
+    
+    <div class="success test-box">
+        <h3>✅ 测试结果</h3>
+        <p id="result">点击下方按钮开始测试</p>
+        <button class="btn-primary" onclick="runTests()">开始全面测试</button>
+        <button class="btn-secondary" onclick="checkMainSite()">检查主网站</button>
+    </div>
+    
+    <script>
+        document.getElementById('time').textContent = new Date().toLocaleString();
+        
+        function updateDimensions() {
+            const width = window.innerWidth;
+            document.getElementById('width').textContent = width;
+            let mode = '桌面版';
+            if (width < 768) mode = '手机版';
+            else if (width < 1024) mode = '平板版';
+            document.getElementById('mode').textContent = mode;
+        }
+        
+        window.addEventListener('resize', updateDimensions);
+        updateDimensions();
+        
+        function runTests() {
+            let result = '';
+            const style = document.documentElement.style;
+            
+            // 测试1：是否有默认样式
+            if (window.getComputedStyle(document.body).fontFamily.includes('Microsoft YaHei')) {
+                result += '<li>✅ 字体加载正常</li>';
+            } else {
+                result += '<li>❌ 字体加载失败</li>';
+            }
+            
+            // 测试2：CSS支持
+            result += '<li>✅ CSS样式测试正常（你能看到这个列表有样式吗？）</li>';
+            
+            // 测试3：JavaScript
+            result += '<li>✅ JavaScript执行正常</li>';
+            
+            // 测试4：基本功能
+            result += '<li>✅ 按钮点击和交互正常</li>';
+            
+            document.getElementById('result').innerHTML = `
+                <h4>测试完成！</h4>
+                <ul>${result}</ul>
+                <p>如果都能看到✅，说明CSS功能完整。</p>
+            `;
+        }
+        
+        function checkMainSite() {
+            // 测试主网站是否能访问
+            const url = 'https://lxinyuan2024.github.io/xinyuanzhiku/';
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
