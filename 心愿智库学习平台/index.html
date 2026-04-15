@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="心愿智库学习平台 - 专业的土木工程知识付费平台，提供施工技术、行业规范、专业问答等服务。">
+    <meta name="keywords" content="土木工程,施工技术,工程问答,AI顾问,知识付费">
+    <meta name="author" content="心愿 职业工程师">
+    
+    <title>心愿智库学习平台 | 土木工程专业问答与知识服务</title>
+    
+    <!-- 样式文件 -->
+    <link rel="stylesheet" href="public/css/style.css">
+    <!-- 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="public/css/style.css" as="style">
+    
+    <!-- 网站图标 -->
+    <link rel="icon" type="image/x-icon" href="public/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="public/images/apple-touch-icon.png">
+    
+    <!-- 结构化数据 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "心愿智库学习平台",
+        "url": "https://xinyuanzhiku.com",
+        "description": "专业的土木工程知识付费平台，提供施工技术、行业规范、专业问答等服务。",
+        "author": {
+            "@type": "Person",
+            "name": "心愿",
+            "jobTitle": "土木工程师"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header class="header">
+        <div class="container header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <span class="logo-icon">🏗️</span>
+                <span class="logo-text">心愿智库学习</span>
+            </div>
+            
+            <!-- 主菜单 -->
+            <nav class="nav">
+                <button class="nav-toggle" aria-label="切换导航">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">首页</a></li>
+                    <li><a href="#columns" class="nav-link">专业专栏</a></li>
+                    <li><a href="#features" class="nav-link">平台特色</a></li>
+                    <li><a href="#about" class="nav-link">关于我们</a></li>
+                    <li><a href="#contact" class="nav-link">联系我们</a></li>
+                </ul>
+            </nav>
+            
+            <!-- 用户操作区域 -->
+            <div class="header-actions">
+                <button class="btn btn-secondary" onclick="window.location.href='login.html'">
+                    <i class="fas fa-user btn-icon"></i>
+                    登录/注册
+                </button>
+                <button class="btn btn-primary" onclick="window.location.href='#columns'">
+                    立即订阅
+                    <i class="fas fa-arrow-right btn-icon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主页英雄区域 -->
+    <main id="home">
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">
+                    土木工程专业知识平台
+                </h1>
+                <p class="hero-subtitle">
+                    汇聚一线施工经验，提供专业的土木工程问答、技术文档和实用工具。<br>
+                    5年现场经验工程师亲自解答，助您在施工、材料、规范等方面提升专业技能。
+                </p>
+                
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-lg" onclick="window.location.href='#columns'">
+                        <i class="fas fa-graduation-cap btn-icon"></i>
+                        探索专业专栏
+                    </button>
+                    <button class="btn btn-secondary btn-lg" onclick="window.location.href='#features'">
+                        <i class="fas fa-play-circle btn-icon"></i>
+                        观看平台演示
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 核心特色区 -->
+        <section id="features" class="section">
+            <div class="container">
+                <h2 class="section-title">平台核心特色</h2>
+                
+                <div class="columns-grid">
+                    <!-- 特色1 -->
+                    <div class="column-card">
+                        <div class="column-header" style="background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);">
+                            <i class="fas fa-user-graduate" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                            <h3 class="column-title">专业工程师亲授</h3>
+                        </div>
+                        <div class="column-body">
+                            <ul class="column-features">
+                                <li>5年一线施工经验分享</li>
+                                <li>现场问题解决方案详解</li>
+                                <li>最新行业标准规范解读</li>
+                                <li>施工难点重点剖析</li>
+                            </ul>
+                            <p style="margin-top: var(--space-lg);">
+                                所有内容均由经验丰富的土木工程师亲自编写和审核，确保专业性和实用性。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 特色2 -->
+                    <div class="column-card">
+                        <div class="column-header" style="background: linear-gradient(135deg, #3498DB 0%, #2980B9 100%);">
+                            <i class="fas fa-book" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                            <h3 class="column-title">丰富技术文档库</h3>
+                        </div>
+                        <div class="column-body">
+                            <ul class="column-features">
+                                <li>施工工艺流程图解</li>
+                                <li>材料参数对照表</li>
+                                <li>安全规范手册</li>
+                                <li>质量验收标准</li>
+                            </ul>
+                            <p style="margin-top: var(--space-lg);">
+                                定期更新专业文档，涵盖混凝土、钢筋、模板、地基等领域，满足不同学习需求。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 特色3 -->
+                    <div class="column-card">
+                        <div class="column-header" style="background: linear-gradient(135deg, #E74C3C 0%, #C0392B 100%);">
+                            <i class="fas fa-tools" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                            <h3 class="column-title">实用计算工具包</h3>
+                        </div>
+                        <div class="column-body">
+                            <ul class="column-features">
+                                <li>混凝土方量计算器</li>
+                                <li>钢筋下料表生成器</li>
+                                <li>施工进度计划模板</li>
+                                <li>成本估算表格</li>
+                            </ul>
+                            <p style="margin-top: var(--space-lg);">
+                                提供专业的Excel计算工具，帮助您快速完成工程计算和数据分析工作。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 专栏展示区 -->
+        <section id="columns" class="section" style="background: var(--background-light);">
+            <div class="container">
+                <h2 class="section-title">专业专栏订阅</h2>
+                <p style="text-align: center; margin-bottom: var(--space-xl); color: var(--medium-text); max-width: 800px; margin-left: auto; margin-right: auto;">
+                    选择一个适合您的订阅方案，即刻开启土木工程专业知识学习之旅。所有订阅用户均可享受专业内容更新和一对一问答服务。
+                </p>
+                
+                <div class="columns-grid">
+                    <!-- 月卡专栏 -->
+                    <div class="column-card">
+                        <div class="column-header">
+                            <h3 class="column-title">土木工程AI问答专栏</h3>
+                            <p style="opacity: 0.9;">月度订阅方案</p>
+                        </div>
+                        
+                        <div class="column-body">
+                            <div class="column-price">
+                                <div class="price-monthly">
+                                    <div class="price-amount">
+                                        ¥<span id="monthly-price">29</span>
+                                    </div>
+                                    <div class="price-period">/月</div>
+                                </div>
+                                <div class="price-yearly">
+                                    <div class="price-amount">
+                                        ¥<span id="yearly-price">99</span>
+                                    </div>
+                                    <div class="price-period">/年（节省66%）</div>
+                                </div>
+                            </div>
+                            
+                            <ul class="column-features">
+                                <li>每周施工工艺专业文档</li>
+                                <li>专业Excel计算工具下载</li>
+                                <li>一对一技术问题解答</li>
+                                <li>行业标准规范更新</li>
+                                <li>施工经验分享会参与</li>
+                                <li>新用户专享免费资料</li>
+                            </ul>
+                            
+                            <div class="column-stats">
+                                <div>
+                                    <strong>8</strong> 篇专业文档
+                                </div>
+                                <div>
+                                    <strong>3</strong> 个专业工具
+                                </div>
+                                <div>
+                                    <strong>24h</strong> 内回复
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="padding: var(--space-xl); text-align: center; border-top: 1px solid var(--border-color);">
+                            <button class="btn btn-primary btn-block" onclick="subscribeNow('monthly')">
+                                <i class="fas fa-shopping-cart btn-icon"></i>
+                                订阅月度方案
+                            </button>
+                            
+                            <div style="margin-top: var(--space-md);">
+                                <a href="#" onclick="subscribeNow('yearly')" style="font-size: 0.875rem; color: var(--accent-color);">
+                                    或选择年度方案 →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 年度专栏 -->
+                    <div class="column-card" style="transform: scale(1.035); position: relative;">
+                        <div style="position: absolute; top: -10px; right: -10px; background: var(--warning-color); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; z-index: 1;">
+                            推荐
+                        </div>
+                        
+                        <div class="column-header" style="background: linear-gradient(135deg, #27AE60 0%, #229954 100%);">
+                            <h3 class="column-title">全年度超级会员</h3>
+                            <p style="opacity: 0.9;">年度尊享方案</p>
+                        </div>
+                        
+                        <div class="column-body">
+                            <div style="text-align: center; margin-bottom: var(--space-xl);">
+                                <div class="price-amount" style="font-size: 2.5rem; color: var(--success-color);">
+                                    ¥<span id="premium-price">99</span>
+                                </div>
+                                <div class="price-period" style="font-size: 1rem; color: var(--medium-text);">
+                                    仅需8.25元/月，限时优惠
+                                </div>
+                            </div>
+                            
+                            <ul class="column-features">
+                                <li><strong>所有月度功能</strong></li>
+                                <li>新增：专题系列课程</li>
+                                <li>新增：季度技术交流会</li>
+                                <li>新增：个人项目管理咨询</li>
+                                <li>新增：专业软件使用指导</li>
+                                <li>新增：职业发展规划建议</li>
+                            </ul>
+                            
+                            <div class="column-stats">
+                                <div>
+                                    <strong>50+</strong> 专业文档
+                                </div>
+                                <div>
+                                    <strong>10+</strong> 专业工具
+                                </div>
+                                <div>
+                                    <strong>会员优先</strong> 支持
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="padding: var(--space-xl); text-align: center; border-top: 1px solid var(--border-color);">
+                            <button class="btn btn-success btn-block" onclick="subscribeNow('yearly')">
+                                <i class="fas fa-crown btn-icon"></i>
+                                立即开通年度会员
+                            </button>
+                            
+                            <div style="margin-top: var(--space-md); font-size: 0.875rem; color: var(--light-text);">
+                                <i class="fas fa-shield-alt" style="margin-right: 4px;"></i>
+                                30天内不满意可申请退款
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 免费内容专区 -->
+                    <div class="column-card">
+                        <div class="column-header" style="background: linear-gradient(135deg, #F39C12 0%, #D68910 100%);">
+                            <h3 class="column-title">新人免费体验区</h3>
+                            <p style="opacity: 0.9;">无需订阅，即刻体验</p>
+                        </div>
+                        
+                        <div class="column-body">
+                            <ul class="column-features">
+                                <li>2篇免费专业文档</li>
+                                <li>入门级计算工具试用</li>
+                                <li>常见问题解答文档</li>
+                                <li>行业动态信息分享</li>
+                                <li>平台功能使用指南</li>
+                                <li>用户评价真实反馈</li>
+                            </ul>
+                            
+                            <div style="margin-top: var(--space-xl); padding: var(--space-md); background: rgba(243, 156, 18, 0.1); border-radius: var(--radius-md);">
+                                <p style="color: var(--warning-color); font-size: 0.875rem;">
+                                    <i class="fas fa-lightbulb" style="margin-right: 4px;"></i>
+                                    免费内容可帮助您了解平台质量和内容价值，再决定是否订阅。
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div style="padding: var(--space-xl); text-align: center; border-top: 1px solid var(--border-color);">
+                            <button class="btn btn-secondary btn-block" onclick="window.location.href='free-content.html'">
+                                <i class="fas fa-unlock btn-icon"></i>
+                                查看免费内容
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 用户评价区 -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">用户真实评价</h2>
+                
+                <div class="columns-grid">
+                    <!-- 评价1 -->
+                    <div class="column-card" style="background: var(--background-white);">
+                        <div style="padding: var(--space-xl);">
+                            <div style="display: flex; align-items: center; margin-bottom: var(--space-lg);">
+                                <div style="width: 50px; height: 50px; border-radius: 50%; background: #3498DB; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: var(--space-md);">
+                                    王工
+                                </div>
+                                <div>
+                                    <div style="font-weight: 600;">王工程师 · 施工员</div>
+                                    <div style="color: var(--light-text); font-size: 0.875rem;">订阅8个月</div>
+                                </div>
+                            </div>
+                            <p style="font-style: italic; color: var(--medium-text);">
+                                “混凝土浇筑流程文档非常实用，解决了我现场施工中的实际问题。每月更新的内容都很有价值，特别推荐给一线施工人员。”
+                            </p>
+                            <div style="color: #FFC107; margin-top: var(--space-md);">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 评价2 -->
+                    <div class="column-card" style="background: var(--background-white);">
+                        <div style="padding: var(--space-xl);">
+                            <div style="display: flex; align-items: center; margin-bottom: var(--space-lg);">
+                                <div style="width: 50px; height: 50px; border-radius: 50%; background: #E74C3C; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: var(--space-md);">
+                                    李总
+                                </div>
+                                <div>
+                                    <div style="font-weight: 600;">李经理 · 项目经理</div>
+                                    <div style="color: var(--light-text); font-size: 0.875rem;">订阅6个月</div>
+                                </div>
+                            </div>
+                            <p style="font-style: italic; color: var(--medium-text);">
+                                “作为项目经理，我需要快速了解各种施工规范。这个平台的文档结构清晰，查找方便，大大提升了我的工作效率。”
+                            </p>
+                            <div style="color: #FFC107; margin-top: var(--space-md);">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 评价3 -->
+                    <div class="column-card" style="background: var(--background-white);">
+                        <div style="padding: var(--space-xl);">
+                            <div style="display: flex; align-items: center; margin-bottom: var(--space-lg);">
+                                <div style="width: 50px; height: 50px; border-radius: 50%; background: #27AE60; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: var(--space-md);">
+                                    张工
+                                </div>
+                                <div>
+                                    <div style="font-weight: 600;">张工程师 · 技术总监</div>
+                                    <div style="color: var(--light-text); font-size: 0.875rem;">年度会员</div>
+                                </div>
+                            </div>
+                            <p style="font-style: italic; color: var(--medium-text);">
+                                “年度会员非常划算！不仅内容专业，还能参加技术交流会。我经常把平台推荐给团队新员工，帮助他们快速掌握施工要点。”
+                            </p>
+                            <div style="color: #FFC107; margin-top: var(--space-md);">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- 关于我们 -->
+                <div class="footer-section">
+                    <h4>关于心愿智库</h4>
+                    <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: var(--space-md);">
+                        专注于土木工程领域的专业知识服务平台，提供专业的施工技术、行业规范和实践经验分享。
+                    </p>
+                    <div style="display: flex; gap: var(--space-md);">
+                        <a href="#" style="color: white; font-size: 1.5rem;">
+                            <i class="fab fa-weixin"></i>
+                        </a>
+                        <a href="#" style="color: white; font-size: 1.5rem;">
+                            <i class="fab fa-qq"></i>
+                        </a>
+                        <a href="#" style="color: white; font-size: 1.5rem;">
+                            <i class="fab fa-weibo"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 快速链接 -->
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#columns">专业专栏</a></li>
+                        <li><a href="#features">平台特色</a></li>
+                        <li><a href="#about">关于我们</a></li>
+                        <li><a href="terms.html">用户协议</a></li>
+                        <li><a href="privacy.html">隐私政策</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 联系方式 -->
+                <div class="footer-section">
+                    <h4>联系我们</h4>
+                    <ul class="footer-links">
+                        <li>
+                            <i class="fas fa-envelope" style="margin-right: 8px;"></i>
+                            <a href="mailto:admin@xinyuanzhiku.com">admin@xinyuanzhiku.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone" style="margin-right: 8px;"></i>
+                            <a href="tel:18739225720">187-3922-5720</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>
+                            <span style="color: rgba(255, 255, 255, 0.8);">河南省平顶山市</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock" style="margin-right: 8px;"></i>
+                            <span style="color: rgba(255, 255, 255, 0.8);">工作日 9:00-18:00</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- 支付方式 -->
+                <div class="footer-section">
+                    <h4>支持支付</h4>
+                    <div style="display: flex; gap: var(--space-md); margin-top: var(--space-md);">
+                        <div style="background: white; padding: 8px; border-radius: 4px; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fab fa-weixin" style="color: #07C160; font-size: 2rem;"></i>
+                        </div>
+                        <div style="background: white; padding: 8px; border-radius: 4px; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fab fa-alipay" style="color: #1677FF; font-size: 2rem;"></i>
+                        </div>
+                    </div>
+                    <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.875rem; margin-top: var(--space-md);">
+                        支持微信支付、支付宝扫码支付，支付过程安全便捷。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>
+                    © 2026 心愿智库学习平台. 保留所有权利.
+                    &nbsp;|&nbsp;
+                    <a href="sitemap.html" style="color: rgba(255, 255, 255, 0.7);">网站地图</a>
+                    &nbsp;|&nbsp;
+                    <a href="help.html" style="color: rgba(255, 255, 255, 0.7);">帮助中心</a>
+                </p>
+                <p style="margin-top: var(--space-sm); font-size: 0.75rem;">
+                    本平台内容由经验丰富的土木工程师提供，仅供参考学习使用，不构成专业施工建议。实际施工请遵循国家相关规范和标准。
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript文件 -->
+    <script src="public/js/main.js"></script>
+    <script>
+        // 简单的JavaScript功能
+        document.addEventListener('DOMContentLoaded', function() {
+            // 移动端导航切换
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (navToggle) {
+                navToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+            }
+            
+            // 导航链接点击效果
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    // 移除所有active类
+                    navLinks.forEach(item => item.classList.remove('active'));
+                    // 添加当前active类
+                    this.classList.add('active');
+                    
+                    // 如果是移动端，点击后关闭菜单
+                    if (window.innerWidth <= 768) {
+                        navMenu.classList.remove('active');
+                    }
+                });
+            });
+            
+            // 滚动时激活对应导航
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('section[id]');
+                const scrollPos = window.scrollY + 100;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            });
+            
+            // 订阅按钮点击事件
+            window.subscribeNow = function(planType) {
+                // 存储订阅计划类型
+                localStorage.setItem('selectedPlan', planType);
+                
+                // 跳转到订阅页面
+                window.location.href = `subscribe.html?plan=${planType}`;
+            };
+            
+            // 平台统计
+            const visitCount = localStorage.getItem('visitCount') || 0;
+            localStorage.setItem('visitCount', parseInt(visitCount) + 1);
+            
+            // 显示访问次数（仅开发调试用）
+            console.log(`心愿智库平台已启动，欢迎！您是第${parseInt(visitCount) + 1}次访问。`);
+        });
+        
+        // 返回顶部按钮
+        const scrollToTopBtn = document.createElement('button');
+        scrollToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+        scrollToTopBtn.style.cssText = `
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: none;
+            z-index: 999;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        `;
+        document.body.appendChild(scrollToTopBtn);
+        
+        scrollToTopBtn.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1)';
+            this.style.backgroundColor = 'var(--primary-color)';
+        });
+        
+        scrollToTopBtn.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            this.style.backgroundColor = 'var(--accent-color)';
+        });
+        
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.style.display = 'flex';
+                scrollToTopBtn.style.alignItems = 'center';
+                scrollToTopBtn.style.justifyContent = 'center';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
+    </script>
+    
+    <!-- 页面加载完成后的效果 -->
+    <script>
+        // 页面加载动画
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+            
+            // 延迟显示元素（可选）
+            setTimeout(() => {
+                const elements = document.querySelectorAll('.fade-in');
+                elements.forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                });
+            }, 200);
+        });
+    </script>
+</body>
+</html>
